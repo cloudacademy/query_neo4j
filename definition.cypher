@@ -2,8 +2,9 @@ CREATE (andy:Driver {name: "Andy Smith"}), (john:Driver {name: "John Town"}), (b
 CREATE (andy)-[m:MARRIED_WITH]->(ellie)
 CREATE (andy)-[d1:DRIVES {year: 2017}]->(ta)
 CREATE (john)-[d2:DRIVES {year: 2019}]->(ta)
-CREATE (john)-[fo:FRIENDS_OF]->(bryan)
+CREATE (john)-[fo1:FRIENDS_OF]->(bryan)
+CREATE (bryan)-[fo2:FRIENDS_OF]->(john)
 CREATE (bryan)-[d3:DRIVES {year: 2020}]->(tb)
 CREATE (ta)-[e1:ENEMIES_OF]->(tb)
 CREATE (tb)-[e2:ENEMIES_OF]->(ta)
-RETURN andy, john, bryan, ellie, ta, tb, d1, d2, d3, fo, e1, e2;
+RETURN andy, john, bryan, ellie, ta, tb, d1, d2, d3, fo1, fo2, e1, e2;
